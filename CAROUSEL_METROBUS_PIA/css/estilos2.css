@@ -1,0 +1,274 @@
+/* FONTS GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* VARIABLES */
+
+:root {
+
+    --azul-opacidad: #184463;
+    --bg-menu: #003053;
+    --bg-body: #C7E1FF;
+}
+
+/* GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenedor{
+    position: relative;
+}
+.texto{
+    color: white;
+    text-align: center;
+    margin: 300px 0;
+    font-size: 28px;
+
+}
+.tran{
+    opacity: 0;
+}
+.texto img{
+    height: 50%;
+    width: 25%;
+    align-items: center;
+}
+@keyframes fanimado{
+    0%{
+background-position: 0% 50%;
+    }
+    50%{background-position: 100% 50%;
+}
+100%{background-position: 0% 50%;
+
+}
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-image: linear-gradient(135deg, 
+    #00B7D4, #505488, #2F3F80, #161569, #5A4894, #A950A1,#FF7CAE);
+background-size: 500%;
+animation: fanimado 10s infinite;
+}
+.texto{
+    color: white;
+    text-align: center;
+    margin: 100px 0;
+    font-size: 28px;
+    float: center;
+    margin-top: 60px;
+}
+
+/* LAYOUT */
+
+.menu-dashboard {
+    max-width: 150px;
+    height: 150vh;
+    background:  rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    transition: max-width .3s ease;
+    float: left;
+    margin-top: auto;
+
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-menu .logo {
+    display: flex;
+    align-items: center;
+}
+
+.top-menu .logo img {
+    width: 40px;
+    transition: width .3s ease;
+}
+
+.top-menu .logo span {
+    font-size: 20px;
+    margin-left: 20px;
+    display: none;
+    color: #fff;
+}
+
+.top-menu .toggle {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.top-menu .toggle i {
+    font-size: 35px;
+    color: #fff;
+}
+
+/* INPUT BOX */
+
+.input-search {
+    width: 100%;
+    margin: 50px 0;
+    background-color: var(--azul-opacidad);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.input-search i {
+    font-size: 30px;
+    margin-right: 20px;
+    color: #fff;
+}
+
+.input-search .input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 30px;
+    color: #fff;
+    font-size: 22px;
+    display: none;
+}
+
+/* ENLACES MENU */
+
+.menu .enlace {
+    width: 100%;
+    padding: 10px 0 20px 17px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .3s ease;
+}
+
+.menu .enlace:hover {
+    background: var(--azul-opacidad);
+}
+
+.menu .enlace i {
+    margin-right: 20px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.menu .enlace span {
+    opacity: 0;
+    transition: opacity .3s ease;
+    text-decoration: none;
+
+}
+.menu .enlace span a {
+    text-decoration: none;
+    color: #fff;
+}
+.menu-dashboard.open {
+    max-width: 300px;
+}
+
+.menu-dashboard.open .top-menu .logo span {
+    display: block;
+}
+
+.menu-dashboard.open .input-search
+.menu-dashboard.open .menu .enlace {
+    width: auto;
+}
+
+.menu-dashboard.open .input-search .input {
+    display: block;
+}
+
+.menu-dashboard.open .menu .enlace {
+    padding: 20px;
+}
+
+.menu-dashboard.open .menu .enlace span {
+    opacity: 1;
+}
+
+  
+.carousel__contenedor {
+	position: relative;
+}
+
+.carousel__anterior,
+.carousel__siguiente {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: none;
+	top: calc(50% - 35px);
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	background: none;
+	color: #fff;
+	opacity: 20%;
+}
+
+.carousel__anterior:hover,
+.carousel__siguiente:hover {
+	opacity: 100%;
+}
+
+.carousel__anterior {
+	left: -30px;
+}
+
+.carousel__siguiente {
+	right: -30px;
+}
+
+.carousel__lista {
+	overflow: hidden;
+}
+
+.carousel__elemento {
+	text-align: center;
+}
+
+.carousel__indicadores .glider-dot {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background: #fff;
+	opacity: .2;
+	border-radius: 0;
+}
+
+.carousel__indicadores .glider-dot:hover {
+	opacity: .5;
+}
+
+.carousel__indicadores .glider-dot.active {
+	opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		padding: 40px 0;
+	}
+
+	.contenido-principal {
+		flex-direction: column;
+	}
+
+	.contenido-principal > * {
+		width: 100%;
+	}
+}
